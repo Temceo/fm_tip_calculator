@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="script.js"></script>
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+
+<body>
+  <h1>Spli<br>tter</h1>
+  <main>
+    <section class="bill-calculator">
+
+      <div class="bill-section header">
+        <div class="bill-header">
+          <label for="bill" class="bill-label heading">Bill </label>
+          <span class="error-msg"></span>
+        </div>
+        <input type="text" class="bill-input" placeholder="0" style="text-align:right;">
+      </div>
+
+      <div class="tips-container header">
+        <div class="tips-header">
+          <p class="tip-heading heading">Select tip %</p>
+          <span class="error-msg"></span>
+        </div>
+        <button class="percent-btn tip-option" data-percent="5">5%</button>
+        <button class="percent-btn tip-option" data-percent="10">10%</button>
+        <button class="percent-btn tip-option" data-percent="15">15%</button>
+        <button class="percent-btn tip-option" data-percent="25">25%</button>
+        <button class="percent-btn tip-option" data-percent="50">50%</button>
+        <input class="custom-tip tip-option" placeholder="Custom" style="text-align:right;"></input>
+      </div>
+
+      <div class="people-section header">
+        <div class="people-count-header">
+          <label for="people" class="people-count-label heading">Number of people</label>
+          <span class="error-msg"></span>
+        </div>
+        <input type="text" class="people-count-input" placeholder="0" style="text-align:right;">
+      </div>
+    </section>
+
+    <section class="display-amount">
+      <p class="tip">Tip Amount <br><span>/ people</span></p>
+      <p class="tip-amount">$0.00</p>
+      <p class="total">Total <br><span>/ person</span></p>
+      <p class="total-per-person">$0.00</p>
+      <button class="reset">Reset</button>
+    </section>
+  </main>
+
+  <!-- Bill
+
+  Select Tip %
+  5%
+  10%
+  15%
+  25%
+  50%
+  Custom
+
+  Number of People
+
+  Tip Amount
+  / person
+
+  Total
+  / person
+
+  Reset -->
+
+</body>
+
+</html>

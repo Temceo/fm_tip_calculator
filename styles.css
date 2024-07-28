@@ -1,0 +1,235 @@
+:root {
+  /* font family */
+  --ff-mono: "Mono", sans-serif;
+  /* primary colours */
+  --fc-strong-cyan: hsl(172, 67%, 45%);
+
+  /* neutral */
+  --fc-very-dark-cyan: hsl(183, 100%, 15%);
+  --fc-dark-greyish-cyan: hsl(186, 14%, 43%);
+  --fc-greyish-cyan: hsl(184, 14%, 56%);
+  --fc-light-greyish-cyan: hsl(185, 41%, 84%);
+  --fc-very-light-greyish-cyan: hsl(189, 41%, 97%);
+  --fc-white: hsl(0, 0%, 100%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--ff-mono);
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--fc-light-greyish-cyan);
+}
+
+/* main */
+
+main {
+  display: grid;
+  place-content: center;
+  /* flex-direction: column; */
+  gap: 3rem;
+  background-color: white;
+  padding: 2rem;
+  width: 90%;
+  min-width: 390px;
+  max-width: 700px;
+  border-radius: 8px;
+}
+
+/* bill section */
+.bill-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 2rem 0;
+  gap: 0.5rem;
+}
+
+.bill-header,
+.tips-header,
+.people-count-header {
+  grid-column: 1 / -1;
+  grid-row: 1/2;
+  /* flex */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.bill-input {
+  grid-column: 1 / -1;
+  grid-row: 2/3;
+}
+
+/* bill section and people count sections - common elements */
+
+.bill-input {
+  background-image: url(images/icon-dollar.svg);
+}
+
+.people-count-input {
+  background-image: url(images/icon-person.svg);
+}
+
+.bill-input,
+.people-count-input {
+  background-repeat: no-repeat;
+  background-position: 3% 50%;
+  background-size: 0.8rem;
+}
+
+.bill-input,
+.people-count-input,
+.custom-tip {
+  background-color: var(--fc-very-light-greyish-cyan);
+  color: var(--fc-very-dark-cyan);
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+  outline: 0;
+}
+
+.bill-input,
+.people-count-input {
+  padding: 1rem;
+}
+
+.error-msg {
+  font-size: 1rem;
+  color: red;
+}
+.error-border {
+  border: 1px solid red;
+}
+
+.success-border {
+  border: 1px solid green;
+}
+
+/* tips section */
+.tips-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.tip-option {
+  width: 100%;
+  padding: 1rem;
+}
+
+.percent-btn {
+  border: none;
+  border-radius: 5px;
+  outline: 0;
+  color: white;
+  font-weight: 600;
+  background-color: var(--fc-very-dark-cyan);
+  cursor: pointer;
+}
+
+.active {
+  color: var(--fc-very-dark-cyan);
+  background-color: var(--fc-strong-cyan);
+}
+
+/* people-count section */
+.people-section {
+  margin: 2rem 0 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* display amount section */
+.display-amount {
+  background-color: var(--fc-very-dark-cyan);
+  color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 2rem;
+  align-items: center;
+}
+
+.tip {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.tip-amount,
+.total-per-person {
+  color: var(--fc-strong-cyan);
+}
+
+.tip span,
+.total span {
+  color: var(--fc-light-greyish-cyan);
+}
+
+.tip-amount,
+.total-per-person {
+  text-align: right;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.tip-amount {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.total {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.total-per-person {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.display-amount button {
+  grid-column: 1/-1;
+  grid-row: 4/5;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: var(--fc-very-dark-cyan);
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.active-btn {
+  background-color: var(--fc-strong-cyan);
+}
+
+@media (min-width: 600px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .display-amount {
+    grid-template-rows: repeat(5, auto);
+  }
+
+  .display-amount button {
+    grid-row: 5/6;
+  }
+}
